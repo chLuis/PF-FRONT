@@ -159,7 +159,7 @@ export const Test = () => {
 
 
                 <div className="doctores">
-                    {doctors.map((doctor, i) => doctor.aprobado === false ? (
+                    {doctors?.map((doctor, i) => doctor.aprobado === false ? (
                         <div key={i} className="doctor">
                             <p>ID: {doctor.id_user}</p>
                             <p>Nombre: {doctor.nombre}</p>

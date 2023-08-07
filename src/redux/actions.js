@@ -25,13 +25,13 @@ export const postDoctor = (user) => async (dispatch) => {
             `${URL_API}/doctor/get/`
         ); //peticion de la data
         const matriculaIngresada = parseInt(user.matricula); // convertir matricula ingresada string a number
-        const matriculas = Object.values(existingDoctor.data).map(
+        const matriculas = Object.values(existingDoctor.data)?.map(
             (doctor) => doctor.matricula
         ); //mapeo para obtener todas la matriculas de la data
-        const emails = Object.values(existingDoctor.data).map(
+        const emails = Object.values(existingDoctor.data)?.map(
             (doctor) => doctor.mail
         );
-        const arrayDni = Object.values(existingDoctor.data).map(
+        const arrayDni = Object.values(existingDoctor.data)?.map(
             (doctor) => doctor.dni
         );
         const dniIngresado = parseInt(user.dni);
@@ -285,10 +285,10 @@ export const postPaciente = (user) => async (dispatch) => {
         ); //peticion de la data
         console.log(existingPaciente.data);
 
-        const emails = Object.values(existingPaciente.data).map(
+        const emails = Object.values(existingPaciente.data)?.map(
             (paciente) => paciente.usuario.mail
         );
-        const arrayDni = Object.values(existingPaciente.data).map(
+        const arrayDni = Object.values(existingPaciente.data)?.map(
             (paciente) => paciente.usuario.dni
         );
         const dniIngresado = parseInt(user.dni);
