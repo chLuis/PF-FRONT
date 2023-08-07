@@ -17,7 +17,7 @@ import {
 } from "./types";
 import Swal from "sweetalert2";
 
-const URL_API = "https://glitch.com/~spiritual-curse-theory"
+const URL_API = "http://localhost:8080"
 
 export const postDoctor = (user) => async (dispatch) => {
     try {
