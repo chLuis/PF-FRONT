@@ -64,7 +64,7 @@ export const postDoctor = (user) => async (dispatch) => {
             return;
         }
 
-        const res = await axios.post("${URL_API}/doctor/post", user);
+        const res = await axios.post(`${URL_API}/doctor/post`, user);
         dispatch({
             type: POST_DOCTOR,
             payload: res.data,
@@ -101,7 +101,7 @@ export const getDoctor = (id) => async (dispatch) => {
 
 export const getDoctors = () => async (dispatch) => {
     try {
-        const res = await axios.get("${URL_API}/doctor/get/");
+        const res = await axios.get(`${URL_API}/doctor/get/`);
         dispatch({
             type: GET_DOCTORS,
             payload: res.data,
@@ -182,7 +182,7 @@ export const deleteDoctor = (id, next) => async (dispatch) => {
 
 export const getPacientes = () => async (dispatch) => {
     try {
-        const res = await axios.get("${URL_API}/paciente/get/");
+        const res = await axios.get(`${URL_API}/paciente/get/`);
         dispatch({
             type: GET_PACIENTES,
             payload: res.data,
@@ -247,7 +247,7 @@ export const getUser = (dni, password) => async (dispatch) => {
 
 export const getUsers = () => async (dispatch) => {
     try {
-        const res = await axios.get("${URL_API}/user/get/");
+        const res = await axios.get(`${URL_API}/user/get/`);
         dispatch({
             type: GET_USERS,
             payload: res.data,
@@ -281,7 +281,7 @@ export const deleteUser = (id, next) => async (dispatch) => {
 export const postPaciente = (user) => async (dispatch) => {
     try {
         const existingPaciente = await axios.get(
-            "${URL_API}/paciente/get/"
+            `${URL_API}/paciente/get/`
         ); //peticion de la data
         console.log(existingPaciente.data);
 
@@ -313,7 +313,7 @@ export const postPaciente = (user) => async (dispatch) => {
         }
 
         const res = await axios.post(
-            "${URL_API}/paciente/post",
+            `${URL_API}/paciente/post`,
             user
         );
         dispatch({
@@ -340,7 +340,7 @@ export const postPaciente = (user) => async (dispatch) => {
         try {
             console.log("TRY");
             const res = await axios.post(
-                "${URL_API}/turno/post",
+                `${URL_API}/turno/post`,
                 turno
             );
             dispatch({
